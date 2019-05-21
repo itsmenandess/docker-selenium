@@ -2,10 +2,6 @@
 # NOTE: DO *NOT* EDIT THIS FILE.  IT IS GENERATED.
 # PLEASE UPDATE Dockerfile.txt INSTEAD OF THIS FILE
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-FROM selenium/node-firefox:3.141.59-neon
-LABEL authors=SeleniumHQ
-
-USER seluser
 
 #==========
 # Maven
@@ -17,6 +13,11 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
 && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
 ENV MAVEN_HOME /usr/share/maven
+
+FROM selenium/node-firefox:3.141.59-neon
+LABEL authors=SeleniumHQ
+
+USER seluser
 
 #====================================
 # Scripts to run Selenium Standalone
