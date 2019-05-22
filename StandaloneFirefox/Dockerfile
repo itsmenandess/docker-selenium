@@ -11,12 +11,12 @@ USER seluser
 #====================================
 # Scripts to run Selenium Standalone
 #====================================
-COPY start-selenium-standalone.sh /opt/bin/start-selenium-standalone.sh
+COPY StandaloneFirefox/start-selenium-standalone.sh /opt/bin/start-selenium-standalone.sh
 
 #==============================
 # Supervisor configuration file
 #==============================
-COPY selenium.conf /etc/supervisor/conf.d/
+COPY StandaloneFirefox/selenium.conf /etc/supervisor/conf.d/
 
 #==========
 # Maven
